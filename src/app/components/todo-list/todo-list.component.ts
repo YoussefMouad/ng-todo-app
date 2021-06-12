@@ -2,7 +2,8 @@ import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable } from '@angular/material/table';
-import { TodoListDataSource, TodoListItem } from './todo-list-datasource';
+import { TodoListItem } from '@shared/interfaces';
+import { TodoListDataSource } from './todo-list-datasource';
 
 @Component({
   selector: 'app-todo-list',

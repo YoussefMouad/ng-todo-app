@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { TodoListItem } from '@shared/interfaces';
 
 @Component({
   selector: 'app-todo-view',
   templateUrl: './todo-view.component.html',
   styleUrls: ['./todo-view.component.css']
 })
-export class TodoViewComponent implements OnInit {
+export class TodoViewComponent {
 
   constructor() { }
 
-  ngOnInit(): void {
+  public onNewItem(item: TodoListItem) {
+    console.log(item);
   }
 
 }

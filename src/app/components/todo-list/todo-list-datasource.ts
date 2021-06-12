@@ -3,13 +3,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { map } from 'rxjs/operators';
 import { Observable, of as observableOf, merge } from 'rxjs';
-
-// TODO: Replace this with your own data model type
-export interface TodoListItem {
-  id: number;
-  title: string;
-  description: string;
-}
+import { TodoListItem } from '@shared/interfaces';
 
 // TODO: replace this with real data from your application
 const EXAMPLE_DATA: TodoListItem[] = [

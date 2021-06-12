@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { TodoListItem } from '@shared/interfaces';
 
 @Component({
   selector: 'app-todo-add',
@@ -7,14 +8,17 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./todo-add.component.css']
 })
 export class TodoAddComponent {
+
+  @Output() private newItem = new EventEmitter<TodoListItem>();
+
   public form: FormGroup = this.fb.group({
     title: [null, Validators.required],
     description: [null, Validators.required],
   });
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder) { }
 
-  onSubmit(): void {
-    console.log(this.form.value);
+  public onSubmit(): void {
+    this.newItem.emit(this.form.value);
   }
 }
